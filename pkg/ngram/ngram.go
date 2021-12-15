@@ -5,6 +5,6 @@ import (
 	"os"
 )
 
-func compute(threadNum int32, ngramNum int32, files []os.DirEntry) {
+func Compute(threadNum int32, ngramNum int32, files []os.DirEntry) {
 	fmt.Println(threadNum, ngramNum, files)
 }
