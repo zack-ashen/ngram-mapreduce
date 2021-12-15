@@ -1,8 +1,8 @@
 package ngram
 
 import (
-	"fmt"
 	"io/fs"
+	"ngram-mapreduce/mapreduce"
 	"os"
 )
 
@@ -14,5 +14,5 @@ func Compute(threadNum int32, ngramNum int32, files []os.DirEntry) {
 		}
 	}
 
-	fmt.Println(threadNum, ngramNum, validFiles[0].Name())
+	mapreduce.Compute(threadNum, ngramNum, validFiles)
 }
