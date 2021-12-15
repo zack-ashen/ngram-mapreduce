@@ -1,3 +1,3 @@
-module github.com/zack-ashen/ngram-mapreduce
+module ngram-mapreduce
 
 go 1.17

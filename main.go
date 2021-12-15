@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"ngram-mapreduce/ngram"
 )
 
 func main() {
@@ -31,6 +33,5 @@ func main() {
 		return
 	}
 
-	ngram.compute(threadNum, ngramNum, files)
-
+	ngram.Compute(int32(threadNum), int32(ngramNum), files)
 }
