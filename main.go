@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
+	"path/filepath"
 	"strconv"
 
 	"ngram-mapreduce/ngram"
@@ -29,9 +31,13 @@ func main() {
 
 	files, err := os.ReadDir(args[2])
 	if err != nil {
-		fmt.Println("Error: that is not a valid directory")
-		return
+		log.Fatal(err)
 	}
 
-	ngram.Compute(int32(threadNum), int32(ngramNum), files)
+	filePaths := []string{}
+	for fileInd := range files {
+		filePaths = append(filePaths, filepath.Join(args[2], files[fileInd].Name()))
+	}
+
+	ngram.Compute(int32(threadNum), int32(ngramNum), filePaths)
 }
