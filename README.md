@@ -8,4 +8,5 @@ This Golang program implements the MapReduce pattern with Goroutines and channel
 ## Installation
 ```sh
 go build
-./ngram-mapreduce -t=3 -n=2 <directory>```
+./ngram-mapreduce -t=3 -n=2 <directory>
+```
